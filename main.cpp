@@ -1,91 +1,118 @@
 #include <iostream>
-#include <math.h>
-
-using namespace std;
-
+#include <cmath>
+#include <windows.h>
+#include <clocale>
 int main()
-{
+{    
+    float a, b, c, h, S, P, r, x, privat;
+    char Q, Z;
+    //SetConsoleCP(1251);
+    //SetConsoleOutputCP(1251);
+    using namespace std;
+    setlocale(LC_ALL,"Russian");
     /*
-    //Вывести на экран Н строк из нулей, причем количество нулей в каждой строке
-    //равно номеру строки. Количество строк Н вводит пользователь (можно из файла).
-    int i, H, count = 1, j;
-    cout << "H="; cin >> H;
-    for (i = 1; i <= H; i++){
-       for(j = 0;j < count; j++)
-           cout << "0";
-       cout << endl;
-       count++;
-    }
+    cout << "*******" << endl
+         << "*     *" << endl
+         << "*******" << endl
+         << "*      " << endl
+         << "*      " << endl;
+    */
+
+    //периметр и площадь Ромба
+    /*
+    cout << "a = ";
+    cin >> a;
+    cout << "h = ";
+    cin >> h;
+    S = a*h;
+    cout << "S = " << S << endl;
+    P = 4 * a;
+    cout << "P = " << P;
+    */
+
+    //разность и частное
+    /*
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    r = a-b;
+    privat = a/b;
+    cout << "Raznost = " << r << endl
+         << "private = " << privat << endl;
+    */
+
+    //поменять значения
+    /*
+    cin >> a >> b;
+    c = a;
+    a = b;
+    cout << b << endl << c;
+    */
+
+    //найдите сумму новых трех чисел
+    /*
+    cin >> a >> b >> c;
+    a = 2*a;
+    b = b/3;
+    c = c*c;
+    h = a + b + c;
+    cout << h << endl;
+    */
+
+    //среднее арифметическое этих чисел
+    /*
+    cin >> a >> b >> c;
+    S = (a + b + c)/3;
+    h = (a*2)-(c*2)-(b*3);
+    cout << "Sridnee = " << S << endl << "Symma = " << h;
+    */
+
+    //квадрат, куб
+    /*
+    cin >> a;
+    b = a*a;
+    c = pow(a,3);
+    cout << b << endl << c;
     */
 
 
+    //Вычислите значение выражения:
     /*
-    //Протабулировать функцию
-    float x,y;
-    int n, N, i;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-     for (x=n; x<=N; x=x+i)
-     {
-        y=-2.4*(x*x)+(3*x)-1;
-        //y=sqrt(15+(4/x))+(13*x)+sin((3*x)+13)
-        cout << " x = " << x << endl << " y = " << y << endl << endl;
-    }
+    cin >> x;
+    a = pow((x+1),2)+3*(x+1);
+    cout << a;
     */
 
+    //Сделать конвертер величин
     /*
-    //Вывести на экран ряд натуральных чисел от n до N с шагом i
-    int n, N, i, j;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-    for (j=n;j<=N;j=j+i)
-        cout << j << " ";
+    cout << "Введите величину:метры, гектар, акры";
+    cin >> Q;
+    cont << "Введите число";
+    cin >> b;
+    cout << "Введите величину для перевода:метры, гектар, акры";
+    cin >> Z;
+    if (Q == "гектар"){
+            b = b*10000;}
+    if (Z == "акры")
+            a = b*4046.86;
     */
 
-
+    /*Вводятся два целых числа. Проверить делится ли первое на второе. Вывести на
+    экран сообщение об этом, а также остаток (если он есть) и частное (в любом
+    случае)*/
     /*
-    //Составить алгоритм, определяющий количество трёхзначных натуральных чисел,
-    //сумма цифр которого равна n.
-    int n, count = 0, i = 99;
+int e, t;
+    cin >> e >> t;
+    c = e % t;
+    x = e / t;
+    if (c == 0)
+        cout << "yes" << endl;
+    else
+        cout << "no" << endl<<"ostatok = " << c << endl;
+    cout << x;
+    *\
 
-      cout << "n=";cin >> n;
-
-      while(++i < 1000)
-          if(i % 10 + i / 10 % 10 + i / 100 == n)
-              cout << i % 10 << i / 10 % 10 << i / 100 << endl;
-              ++count;
-      cout << count << endl;
-    */
-
-
-    //Пользователь задаёт число i и Х. Посчитать y:
-
-    /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
-    cout << "x="; cin >> x;
-    for (j=1;j<=i;j++)
-        y = y+(1/(j*x));
-    cout << "y=" << y;
-    */
-
-    /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
-    cout << "x="; cin >> x;
-    for (j=1;j<=i;j++){
-        if (j%2==0)
-            y=y-(j*x);
-        else
-           y=y+(j*x);
-    }
-    cout << "y=" << y;
-    */
-
-
+    //system("PAUSE");
     return 0;
 }
