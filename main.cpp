@@ -1,91 +1,65 @@
 #include <iostream>
 #include <math.h>
-
 using namespace std;
 
 int main()
 {
+
+
+    //Дана функция y=f(x). Найти значение функции по x:
     /*
-    //Вывести на экран Н строк из нулей, причем количество нулей в каждой строке
-    //равно номеру строки. Количество строк Н вводит пользователь (можно из файла).
-    int i, H, count = 1, j;
-    cout << "H="; cin >> H;
-    for (i = 1; i <= H; i++){
-       for(j = 0;j < count; j++)
-           cout << "0";
-       cout << endl;
-       count++;
-    }
-    */
-
-
-    /*
-    //Протабулировать функцию
-    float x,y;
-    int n, N, i;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-     for (x=n; x<=N; x=x+i)
-     {
-        y=-2.4*(x*x)+(3*x)-1;
-        //y=sqrt(15+(4/x))+(13*x)+sin((3*x)+13)
-        cout << " x = " << x << endl << " y = " << y << endl << endl;
-    }
-    */
-
-    /*
-    //Вывести на экран ряд натуральных чисел от n до N с шагом i
-    int n, N, i, j;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-    for (j=n;j<=N;j=j+i)
-        cout << j << " ";
-    */
-
-
-    /*
-    //Составить алгоритм, определяющий количество трёхзначных натуральных чисел,
-    //сумма цифр которого равна n.
-    int n, count = 0, i = 99;
-
-      cout << "n=";cin >> n;
-
-      while(++i < 1000)
-          if(i % 10 + i / 10 % 10 + i / 100 == n)
-              cout << i % 10 << i / 10 % 10 << i / 100 << endl;
-              ++count;
-      cout << count << endl;
-    */
-
-
-    //Пользователь задаёт число i и Х. Посчитать y:
-
-    /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
+    float y;
+    int x;
     cout << "x="; cin >> x;
-    for (j=1;j<=i;j++)
-        y = y+(1/(j*x));
+    if (x>0)
+        y = 1.5*x+5;
+    if (x<0)
+        y = 2* abs(x+4)-6;
+    if (x==0)
+        y = -2;
+    cout << "y=" << y;
+    */
+    /*
+    int x;
+    float y;
+    cout << "x="; cin >> x;
+    if (x>5)
+        y = 2*(x*x)+10;
+    if (x<5)
+        y = 2 * abs(x+6)-(x*x);
+    if (x==0)
+        y = -2;
     cout << "y=" << y;
     */
 
+    //Напишите программу, которая принимает от пользователя координаты точки и
+    //определяет, попала ли точка в заштрихованную область.
     /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
-    cout << "x="; cin >> x;
-    for (j=1;j<=i;j++){
-        if (j%2==0)
-            y=y-(j*x);
-        else
-           y=y+(j*x);
+    float x, y;
+    int s=0;
+    cin >> x >> y;
+    if (y>x && y<2-(x*x)){
+            cout << "yes";
+    s++;
     }
-    cout << "y=" << y;
+    if (y<2-(x*x) && y>0){
+        cout << "yes";
+        s++;
+    }
+    if (s=0)
+        cout << "no";
     */
 
+    /*
+    float x, y, l;
+    cin >> x >> y;
+    l = sqrt (x*x + y*y);
+    if (l<1 && y<2-(x*x))
+        cout << "yes";
+    else {
+        cout << "no";
+    }
+    */
 
     return 0;
 }
