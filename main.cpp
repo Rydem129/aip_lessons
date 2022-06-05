@@ -3,89 +3,136 @@
 
 using namespace std;
 
+struct Time
+{
+    int clok, mints, seconds;
+};
+struct komlekt
+{
+    float a,b;
+};
+
+float Komlekt (float a,float b){
+    float i = sqrt(-1);
+    return sqrt(a*a + b*b) * (a/sqrt(a*a + b*b) + i*(b/sqrt(a*a + b*b)));
+}
+
+struct robot
+{
+    float wt, sizes, speed;
+};
+
+float Robot(float a, float b, float c){
+    float s;
+    if (a<b<c || a<c<b )
+        s=a;
+    if (a>b>c || b>a>c)
+        s=c;
+    if (b<c<a || b<a<c)
+        s=b;
+
+    cout << s;
+}
+
+
+float Robot2(float a, float b, float c){
+    float s;
+    if (a<b<c || b<a<c )
+        s=c;
+    if (a>b>c || a>c>b)
+        s=a;
+    if (a<c<b || c<a<b)
+        s=b;
+
+    cout << s;
+}
+
+struct plane
+{
+    float speed,radiys,koow;
+};
+float Plane(float s, float r, float k){
+    return s*r*k;
+}
+
+
 int main()
 {
+    //Создайте структуру, которая хранит время: часы, минуты, секунды
     /*
-    //Вывести на экран Н строк из нулей, причем количество нулей в каждой строке
-    //равно номеру строки. Количество строк Н вводит пользователь (можно из файла).
-    int i, H, count = 1, j;
-    cout << "H="; cin >> H;
-    for (i = 1; i <= H; i++){
-       for(j = 0;j < count; j++)
-           cout << "0";
-       cout << endl;
-       count++;
-    }
+    Time time;
+    cout << "clock =";cin >> time.clok;
+    cout << "minutes =";cin >> time.mints;
+    cout << "seconds =";cin >> time.seconds;
+    cout << "syms seconds =" << time.clok * 3600 + time.mints * 60 + time.seconds;
+    */
+
+    //Создайте структуру для хранения комплексных чисел. Атрибуты: вещественная и
+    //мнимая части. Объявите два числа и получите их значения от пользователя.
+    /*
+    komlekt komlekt;
+    cout << "a =";cin >> komlekt.a;
+    cout << "b =";cin >> komlekt.b;
+    cout << Komlekt(komlekt.a,komlekt.b);
     */
 
 
+    //Имеется информация о роботах: габариты, вес, максимальная скорость. Вывести
+    //данные о самом маленьком роботе.
     /*
-    //Протабулировать функцию
-    float x,y;
-    int n, N, i;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-     for (x=n; x<=N; x=x+i)
-     {
-        y=-2.4*(x*x)+(3*x)-1;
-        //y=sqrt(15+(4/x))+(13*x)+sin((3*x)+13)
-        cout << " x = " << x << endl << " y = " << y << endl << endl;
-    }
-    */
+    robot robot;
+    cout << "wt =";cin >> robot.wt;
+    cout << "sizes =";cin >> robot.sizes;
+    cout << "speed =";cin >> robot.speed;
 
-    /*
-    //Вывести на экран ряд натуральных чисел от n до N с шагом i
-    int n, N, i, j;
-    cout << "i="; cin >> i;
-    cout << "n="; cin >> n;
-    cout << "N="; cin >> N;
-    for (j=n;j<=N;j=j+i)
-        cout << j << " ";
+    robot robot2;
+    cout << "wt =";cin >> robot2.wt;
+    cout << "sizes =";cin >> robot2.sizes;
+    cout << "speed =";cin >> robot2.speed;
+
+    robot robotn;
+    cout << "wt =";cin >> robotn.wt;
+    cout << "sizes =";cin >> robotn.sizes;
+    cout << "speed =";cin >> robotn.speed;
+
+    cout << "sizes.min =" << Robot(robot.sizes,robot2.sizes,robotn.sizes);
     */
 
 
+    //Имеется информация о роботах: габариты, вес, максимальная скорость. Вывести
+    //данные о самом быстром роботе.
     /*
-    //Составить алгоритм, определяющий количество трёхзначных натуральных чисел,
-    //сумма цифр которого равна n.
-    int n, count = 0, i = 99;
+    robot robot;
+    cout << "wt =";cin >> robot.wt;
+    cout << "sizes =";cin >> robot.sizes;
+    cout << "speed =";cin >> robot.speed;
 
-      cout << "n=";cin >> n;
+    robot robot2;
+    cout << "wt =";cin >> robot2.wt;
+    cout << "sizes =";cin >> robot2.sizes;
+    cout << "speed =";cin >> robot2.speed;
 
-      while(++i < 1000)
-          if(i % 10 + i / 10 % 10 + i / 100 == n)
-              cout << i % 10 << i / 10 % 10 << i / 100 << endl;
-              ++count;
-      cout << count << endl;
-    */
+    robot robotn;
+    cout << "wt =";cin >> robotn.wt;
+    cout << "sizes =";cin >> robotn.sizes;
+    cout << "speed =";cin >> robotn.speed;
 
-
-    //Пользователь задаёт число i и Х. Посчитать y:
-
-    /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
-    cout << "x="; cin >> x;
-    for (j=1;j<=i;j++)
-        y = y+(1/(j*x));
-    cout << "y=" << y;
+    cout << "speed.max =" << Robot2(robot.speed, robot2.speed, robotn.speed);
     */
 
     /*
-    int i,j;
-    float x, y=0;
-    cout << "i="; cin >> i;
-    cout << "x="; cin >> x;
-    for (j=1;j<=i;j++){
-        if (j%2==0)
-            y=y-(j*x);
-        else
-           y=y+(j*x);
-    }
-    cout << "y=" << y;
-    */
+    Робот-самолёт описывается как структура с полями: скорость вращения винта,
+    радиус винта, коэффициент тяги. Напишите функцию для расчёта тяги,
+    создаваемую винтом (произведение всех характеристик).*/
+    plane plane;
+    cout << "speed =";cin >> plane.speed;
+    cout << "radiys =";cin >> plane.radiys;
+    cout << "koow =";cin >> plane.koow;
+
+    cout << "powered =" << Plane(plane.speed,plane.radiys, plane.koow);
+
 
 
     return 0;
 }
+
